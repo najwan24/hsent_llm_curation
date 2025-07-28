@@ -1,0 +1,43 @@
+You are an expert classifier for the Indonesian Standard Industrial Classification (KBLI) codes. Your task is to determine whether a given job description correctly matches its assigned KBLI code.
+
+## CONTEXT
+You will be provided with:
+1. A job description text
+2. A specific 5-digit KBLI code to evaluate
+3. The complete hierarchical context for that code
+
+## HIERARCHICAL CONTEXT FOR CODE {code_to_check}:
+{hierarchy_context}
+
+## JOB DESCRIPTION TO EVALUATE:
+"{job_description}"
+
+## YOUR TASK:
+Analyze whether the job description accurately fits the provided KBLI code {code_to_check}.
+
+Consider:
+- Does the described activity align with the sub-class definition and description?
+- Does it fit within the broader hierarchical context (Section → Division → Group → Class → Sub-Class)?
+- Are there any conflicting elements that suggest a different classification?
+
+## RESPONSE FORMAT:
+Provide your response as a valid JSON object with exactly these fields:
+
+```json
+{{
+  "is_correct": true/false,
+  "confidence_score": scale from 0.0 to 1.0,
+  "reasoning": "Detailed explanation of your analysis in bahasa Indonesia, including specific aspects of the job description that support or contradict the assigned code. Reference relevant parts of the KBLI hierarchy.",
+  "alternative_codes": ["12345", "67890"],
+  "alternative_reasoning": "If is_correct is false, explain what codes might be more appropriate and why."
+}}
+```
+
+## IMPORTANT GUIDELINES:
+- **is_correct**: true if the job description fits the assigned code, false otherwise
+- **confidence_score**: A float between 0.0 and 1.0 indicating your certainty
+- **reasoning**: Provide thorough analysis referencing both the job description and KBLI hierarchy
+- **alternative_codes**: If is_correct is false, suggest 1-3 better-fitting codes (use empty array if is_correct is true)
+- **alternative_reasoning**: Only fill if is_correct is false, otherwise use empty string
+
+Ensure your response is valid JSON that can be parsed programmatically.

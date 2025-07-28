@@ -1,0 +1,87 @@
+2025-07-28 15:02:29,365 - __main__ - INFO - Logging initialized - Level: DEBUG, File: logs\codebook_preparation\codebook_prep_20250728_150229.log
+2025-07-28 15:02:29,408 - __main__ - INFO - ================================================================================
+2025-07-28 15:02:29,409 - __main__ - INFO - Arguments: {'codebook_input': None, 'codebook_output': None, 'dataset_input': 'data/processed/mini_test.csv', 'dataset_output': None, 'dataset_name': None, 'validate_columns': 'text,kbli_code,category', 'skip_codebook': False, 'skip_dataset': False, 'log_level': 'DEBUG'}
+2025-07-28 15:02:29,409 - __main__ - INFO - ================================================================================
+2025-07-28 15:02:29,410 - __main__ - INFO - Validating input paths and arguments...
+2025-07-28 15:02:29,410 - __main__ - DEBUG - Codebook input path validated: None
+2025-07-28 15:02:29,411 - __main__ - DEBUG - Dataset input path validated: data/processed/mini_test.csv
+2025-07-28 15:02:29,411 - __main__ - DEBUG - Column validation requested for: ['text', 'kbli_code', 'category']
+2025-07-28 15:02:29,411 - __main__ - INFO - Path and argument validation completed successfully
+2025-07-28 15:02:29,412 - __main__ - INFO - ============================================================
+2025-07-28 15:02:29,412 - __main__ - INFO - STARTING HIERARCHICAL CODEBOOK PROCESSING
+2025-07-28 15:02:29,413 - __main__ - INFO - ============================================================
+2025-07-28 15:02:29,413 - src.features.create_hierarchical_codebook - INFO - Loading KBLI codebook from: D:\DSAIProject\hsent_llm_curation\data\external\kbli_codebook.csv
+2025-07-28 15:02:29,416 - src.data.load_codebook - INFO - Loading KBLI codebook from: D:\DSAIProject\hsent_llm_curation\data\external\kbli_codebook.csv
+2025-07-28 15:02:29,443 - src.data.load_codebook - INFO - Successfully loaded 2712 records from KBLI codebook
+2025-07-28 15:02:29,446 - src.data.load_codebook - INFO - Data validation completed successfully
+2025-07-28 15:02:29,447 - src.features.create_hierarchical_codebook - INFO - Loaded 2712 entries from codebook
+2025-07-28 15:02:29,447 - src.features.create_hierarchical_codebook - DEBUG - Creating lookup dictionary from 2712 codebook entries
+2025-07-28 15:02:29,557 - src.features.create_hierarchical_codebook - DEBUG - Created lookup dictionary with 2712 entries
+2025-07-28 15:02:29,558 - src.features.create_hierarchical_codebook - INFO - Created lookup dictionary with 2712 entries
+2025-07-28 15:02:29,559 - src.features.create_hierarchical_codebook - INFO - Found 1791 5-digit codes to process
+2025-07-28 15:02:29,560 - src.features.create_hierarchical_codebook - INFO - Building hierarchical structure...
+2025-07-28 15:02:29,620 - src.features.create_hierarchical_codebook - INFO - Built hierarchical structure for 1791 codes
+2025-07-28 15:02:29,644 - src.features.create_hierarchical_codebook - INFO - Hierarchical codebook saved to: D:\DSAIProject\hsent_llm_curation\data\external\kbli_codebook_hierarchical.csv
+2025-07-28 15:02:29,647 - src.features.create_hierarchical_codebook - DEBUG - Hierarchical codebook validation: {'total_records': 1791, 'expected_columns': ['code_5', 'title_5', 'desc_5', 'code_4', 'title_4', 'code_3', 'title_3', 'code_2', 'title_2', 'code_1', 'title_1'], 'missing_columns': [], 'empty_code_5': np.int64(0), 'empty_titles': np.int64(0), 'is_valid': True}
+2025-07-28 15:02:29,647 - src.features.create_hierarchical_codebook - INFO - Output validation passed successfully
+2025-07-28 15:02:29,647 - src.features.create_hierarchical_codebook - INFO - Hierarchical codebook creation completed:
+2025-07-28 15:02:29,648 - src.features.create_hierarchical_codebook - INFO -   Input: D:\DSAIProject\hsent_llm_curation\data\external\kbli_codebook.csv (2712 total entries)
+2025-07-28 15:02:29,648 - src.features.create_hierarchical_codebook - INFO -   Output: D:\DSAIProject\hsent_llm_curation\data\external\kbli_codebook_hierarchical.csv (1791 hierarchical entries)
+2025-07-28 15:02:29,648 - src.features.create_hierarchical_codebook - INFO -   Columns: ['code_5', 'title_5', 'desc_5', 'code_4', 'title_4', 'code_3', 'title_3', 'code_2', 'title_2', 'code_1', 'title_1']
+2025-07-28 15:02:29,656 - src.features.create_hierarchical_codebook - INFO - Loading hierarchical codebook from: D:\DSAIProject\hsent_llm_curation\data\external\kbli_codebook_hierarchical.csv
+2025-07-28 15:02:29,699 - src.features.create_hierarchical_codebook - INFO - Loaded hierarchical codebook with 1791 records
+2025-07-28 15:02:29,706 - src.features.create_hierarchical_codebook - DEBUG - Hierarchical codebook validation: {'total_records': 1791, 'expected_columns': ['code_5', 'title_5', 'desc_5', 'code_4', 'title_4', 'code_3', 'title_3', 'code_2', 'title_2', 'code_1', 'title_1'], 'missing_columns': [], 'empty_code_5': np.int64(0), 'empty_titles': np.int64(0), 'is_valid': True}
+2025-07-28 15:02:29,709 - src.features.create_hierarchical_codebook - DEBUG - Hierarchical codebook validation: {'total_records': 1791, 'expected_columns': ['code_5', 'title_5', 'desc_5', 'code_4', 'title_4', 'code_3', 'title_3', 'code_2', 'title_2', 'code_1', 'title_1'], 'missing_columns': [], 'empty_code_5': np.int64(0), 'empty_titles': np.int64(0), 'is_valid': True}
+2025-07-28 15:02:29,712 - __main__ - INFO - 
+Sample of hierarchical codebook structure:
+2025-07-28 15:02:29,713 - __main__ - INFO - Code 01111: Pertanian Jagung
+2025-07-28 15:02:29,713 - __main__ - INFO -   Level 4: 0111 - Pertanian serealia (bukan padi), aneka kacang dan biji-bijian penghasil minyak
+2025-07-28 15:02:29,713 - __main__ - INFO -   Level 3: 011 - Pertanian Tanaman Semusim
+2025-07-28 15:02:29,714 - __main__ - INFO -   Level 2: 01 - Pertanian Tanaman, Peternakan, Perburuan dan Kegiatan YBDI
+2025-07-28 15:02:29,714 - __main__ - INFO -   Level 1: A - Pertanian, Kehutanan dan Perikanan
+2025-07-28 15:02:29,714 - __main__ - INFO - 
+2025-07-28 15:02:29,715 - __main__ - INFO - Code 01112: Pertanian Gandum
+2025-07-28 15:02:29,716 - __main__ - INFO -   Level 4: 0111 - Pertanian serealia (bukan padi), aneka kacang dan biji-bijian penghasil minyak
+2025-07-28 15:02:29,716 - __main__ - INFO -   Level 3: 011 - Pertanian Tanaman Semusim
+2025-07-28 15:02:29,716 - __main__ - INFO -   Level 2: 01 - Pertanian Tanaman, Peternakan, Perburuan dan Kegiatan YBDI
+2025-07-28 15:02:29,717 - __main__ - INFO -   Level 1: A - Pertanian, Kehutanan dan Perikanan
+2025-07-28 15:02:29,717 - __main__ - INFO - 
+2025-07-28 15:02:29,719 - __main__ - INFO - ============================================================
+2025-07-28 15:02:29,719 - __main__ - INFO - STARTING DATASET UUID PROCESSING
+2025-07-28 15:02:29,720 - __main__ - INFO - ============================================================
+2025-07-28 15:02:29,720 - __main__ - INFO - Will validate presence of columns: ['text', 'kbli_code', 'category']
+2025-07-28 15:02:29,722 - src.features.generate_uuid_dataset - INFO - Processing dataset: data\processed\mini_test.csv
+2025-07-28 15:02:29,725 - src.data.load_main_data - INFO - Loading main dataset from: data\processed\mini_test.csv
+2025-07-28 15:02:29,738 - src.data.load_main_data - INFO - Successfully loaded 2266 records from dataset
+2025-07-28 15:02:29,742 - src.data.load_main_data - INFO - Data validation completed successfully
+2025-07-28 15:02:29,743 - src.features.generate_uuid_dataset - INFO - Loaded dataset with 2266 records and 4 columns
+2025-07-28 15:02:29,743 - src.features.generate_uuid_dataset - DEBUG - Column validation passed for: ['text', 'kbli_code', 'category']
+2025-07-28 15:02:29,743 - src.features.generate_uuid_dataset - INFO - Adding UUID column 'sample_id' to dataset with 2266 records
+2025-07-28 15:02:29,744 - src.features.generate_uuid_dataset - DEBUG - Using row index + 'text' as seed for UUID generation
+2025-07-28 15:02:29,746 - src.features.generate_uuid_dataset - DEBUG - Generating deterministic UUIDs...
+2025-07-28 15:02:29,760 - src.features.generate_uuid_dataset - INFO - Successfully added 2266 UUIDs with 2266 unique values
+2025-07-28 15:02:29,760 - src.features.generate_uuid_dataset - INFO - UUID column added successfully
+2025-07-28 15:02:29,767 - src.features.generate_uuid_dataset - INFO - Dataset with UUIDs saved to: D:\DSAIProject\hsent_llm_curation\data\processed\mini_test_with_ids.csv
+2025-07-28 15:02:29,768 - src.features.generate_uuid_dataset - INFO - Processing completed successfully:
+2025-07-28 15:02:29,768 - src.features.generate_uuid_dataset - INFO -   Input: data\processed\mini_test.csv (2266 records)
+2025-07-28 15:02:29,769 - src.features.generate_uuid_dataset - INFO -   Output: D:\DSAIProject\hsent_llm_curation\data\processed\mini_test_with_ids.csv (2266 records)
+2025-07-28 15:02:29,769 - src.features.generate_uuid_dataset - INFO -   UUID column: 'sample_id' added as first column
+2025-07-28 15:02:29,812 - src.features.generate_uuid_dataset - INFO - UUID integrity check: {'total_records': 2266, 'unique_uuids': 2266, 'duplicates': 0, 'null_uuids': np.int64(0), 'valid_format': 2266, 'is_valid': np.True_}
+2025-07-28 15:02:29,816 - __main__ - INFO - 
+Dataset summary:
+2025-07-28 15:02:29,816 - __main__ - INFO -   Total records: 2266
+2025-07-28 15:02:29,817 - __main__ - INFO -   Columns: ['sample_id', 'text', 'kbli_code', 'category', 'kbli_count']
+2025-07-28 15:02:29,817 - __main__ - INFO -   UUID column position: 1
+2025-07-28 15:02:29,818 - __main__ - INFO - 
+Sample records with UUIDs:
+2025-07-28 15:02:29,819 - __main__ - INFO -   UUID: 39b18c08-eed8-4865-67ca-37c649c901f0
+2025-07-28 15:02:29,820 - __main__ - INFO -   Text: jagal sapi menghasilkan potong sapi di bidang jaga...
+2025-07-28 15:02:29,820 - __main__ - INFO - 
+2025-07-28 15:02:29,821 - __main__ - INFO -   UUID: edeb5038-7a66-490b-290c-caecba670930
+2025-07-28 15:02:29,821 - __main__ - INFO -   Text: bagian produksi membersihkan jeroan ayam menghasil...
+2025-07-28 15:02:29,822 - __main__ - INFO - 
+2025-07-28 15:02:29,822 - __main__ - INFO -   UUID: 085ce023-fc2e-4a1f-8ea7-94d85c801cf7
+2025-07-28 15:02:29,822 - __main__ - INFO -   Text: menyembelih dan membersihkan ayam menghasilkan aya...
+2025-07-28 15:02:29,823 - __main__ - INFO - 
+2025-07-28 15:02:29,823 - __main__ - INFO - ================================================================================
+2025-07-28 15:02:29,825 - __main__ - INFO - ================================================================================
