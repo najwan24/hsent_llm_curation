@@ -1,0 +1,43 @@
+2025-07-28 15:02:54,715 - __main__ - INFO - Logging initialized - Level: INFO, File: logs\codebook_preparation\codebook_prep_20250728_150254.log
+2025-07-28 15:02:54,719 - __main__ - INFO - ================================================================================
+2025-07-28 15:02:54,720 - __main__ - INFO - Arguments: {'codebook_input': None, 'codebook_output': None, 'dataset_input': None, 'dataset_output': None, 'dataset_name': None, 'validate_columns': None, 'skip_codebook': False, 'skip_dataset': True, 'log_level': 'INFO'}
+2025-07-28 15:02:54,720 - __main__ - INFO - ================================================================================
+2025-07-28 15:02:54,720 - __main__ - INFO - Validating input paths and arguments...
+2025-07-28 15:02:54,724 - __main__ - INFO - Path and argument validation completed successfully
+2025-07-28 15:02:54,727 - __main__ - INFO - ============================================================
+2025-07-28 15:02:54,728 - __main__ - INFO - STARTING HIERARCHICAL CODEBOOK PROCESSING
+2025-07-28 15:02:54,728 - __main__ - INFO - ============================================================
+2025-07-28 15:02:54,730 - src.features.create_hierarchical_codebook - INFO - Loading KBLI codebook from: D:\DSAIProject\hsent_llm_curation\data\external\kbli_codebook.csv
+2025-07-28 15:02:54,732 - src.data.load_codebook - INFO - Loading KBLI codebook from: D:\DSAIProject\hsent_llm_curation\data\external\kbli_codebook.csv
+2025-07-28 15:02:54,763 - src.data.load_codebook - INFO - Successfully loaded 2712 records from KBLI codebook
+2025-07-28 15:02:54,766 - src.data.load_codebook - INFO - Data validation completed successfully
+2025-07-28 15:02:54,766 - src.features.create_hierarchical_codebook - INFO - Loaded 2712 entries from codebook
+2025-07-28 15:02:54,877 - src.features.create_hierarchical_codebook - INFO - Created lookup dictionary with 2712 entries
+2025-07-28 15:02:54,879 - src.features.create_hierarchical_codebook - INFO - Found 1791 5-digit codes to process
+2025-07-28 15:02:54,879 - src.features.create_hierarchical_codebook - INFO - Building hierarchical structure...
+2025-07-28 15:02:54,940 - src.features.create_hierarchical_codebook - INFO - Built hierarchical structure for 1791 codes
+2025-07-28 15:02:54,968 - src.features.create_hierarchical_codebook - INFO - Hierarchical codebook saved to: D:\DSAIProject\hsent_llm_curation\data\external\kbli_codebook_hierarchical.csv
+2025-07-28 15:02:54,971 - src.features.create_hierarchical_codebook - INFO - Output validation passed successfully
+2025-07-28 15:02:54,972 - src.features.create_hierarchical_codebook - INFO - Hierarchical codebook creation completed:
+2025-07-28 15:02:54,972 - src.features.create_hierarchical_codebook - INFO -   Input: D:\DSAIProject\hsent_llm_curation\data\external\kbli_codebook.csv (2712 total entries)
+2025-07-28 15:02:54,973 - src.features.create_hierarchical_codebook - INFO -   Output: D:\DSAIProject\hsent_llm_curation\data\external\kbli_codebook_hierarchical.csv (1791 hierarchical entries)
+2025-07-28 15:02:54,973 - src.features.create_hierarchical_codebook - INFO -   Columns: ['code_5', 'title_5', 'desc_5', 'code_4', 'title_4', 'code_3', 'title_3', 'code_2', 'title_2', 'code_1', 'title_1']
+2025-07-28 15:02:54,979 - src.features.create_hierarchical_codebook - INFO - Loading hierarchical codebook from: D:\DSAIProject\hsent_llm_curation\data\external\kbli_codebook_hierarchical.csv
+2025-07-28 15:02:55,017 - src.features.create_hierarchical_codebook - INFO - Loaded hierarchical codebook with 1791 records
+2025-07-28 15:02:55,027 - __main__ - INFO - 
+Sample of hierarchical codebook structure:
+2025-07-28 15:02:55,027 - __main__ - INFO - Code 01111: Pertanian Jagung
+2025-07-28 15:02:55,028 - __main__ - INFO -   Level 4: 0111 - Pertanian serealia (bukan padi), aneka kacang dan biji-bijian penghasil minyak
+2025-07-28 15:02:55,029 - __main__ - INFO -   Level 3: 011 - Pertanian Tanaman Semusim
+2025-07-28 15:02:55,030 - __main__ - INFO -   Level 2: 01 - Pertanian Tanaman, Peternakan, Perburuan dan Kegiatan YBDI
+2025-07-28 15:02:55,031 - __main__ - INFO -   Level 1: A - Pertanian, Kehutanan dan Perikanan
+2025-07-28 15:02:55,032 - __main__ - INFO - 
+2025-07-28 15:02:55,032 - __main__ - INFO - Code 01112: Pertanian Gandum
+2025-07-28 15:02:55,033 - __main__ - INFO -   Level 4: 0111 - Pertanian serealia (bukan padi), aneka kacang dan biji-bijian penghasil minyak
+2025-07-28 15:02:55,033 - __main__ - INFO -   Level 3: 011 - Pertanian Tanaman Semusim
+2025-07-28 15:02:55,033 - __main__ - INFO -   Level 2: 01 - Pertanian Tanaman, Peternakan, Perburuan dan Kegiatan YBDI
+2025-07-28 15:02:55,034 - __main__ - INFO -   Level 1: A - Pertanian, Kehutanan dan Perikanan
+2025-07-28 15:02:55,034 - __main__ - INFO - 
+2025-07-28 15:02:55,035 - __main__ - INFO - Skipping dataset processing as requested
+2025-07-28 15:02:55,035 - __main__ - INFO - ================================================================================
+2025-07-28 15:02:55,037 - __main__ - INFO - ================================================================================
