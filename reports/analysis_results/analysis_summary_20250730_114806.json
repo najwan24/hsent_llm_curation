@@ -1,0 +1,19 @@
+{
+  "analysis_timestamp": "2025-07-30T11:48:06.855400",
+  "total_records": 630,
+  "unique_uuids": 210,
+  "unique_models": 1,
+  "unique_kbli_codes": 43,
+  "overall_accuracy": 0.7476190476190476,
+  "average_confidence": 0.9604444444444445,
+  "confidence_std": 0.04845261490554769,
+  "model_performance": {
+    "gemini-2.5-flash-lite": {
+      "records": 630,
+      "unique_uuids": 210,
+      "accuracy": 0.7476190476190476,
+      "avg_confidence": 0.9604444444444445,
+      "confidence_std": 0.04845261490554769
+    }
+  }
+}
