@@ -53,20 +53,20 @@ This is a complete LLM processing pipeline for KBLI (Indonesian Standard Industr
 
 ### **Basic Processing**
 ```bash
-# Process with default model (gemini-2.0-flash-exp)
+# Process with default model (gemini-2.5-flash-lite)
 python scripts/01_extract_llm_labels.py \
     --input data/processed/mini_test_with_ids.csv \
-    --model gemini-2.0-flash-exp
+    --model gemini-2.5-flash-lite
 
 # Use different model with slower rate limit
 python scripts/01_extract_llm_labels.py \
     --input data/processed/mini_test_with_ids.csv \
-    --model gemini-1.5-pro
+    --model gemini-2.5-pro
 
 # Resume processing (automatically detects existing results)
 python scripts/01_extract_llm_labels.py \
     --input data/processed/mini_test_with_ids.csv \
-    --model gemini-2.0-flash-exp \
+    --model gemini-2.5-flash \
     --resume
 ```
 

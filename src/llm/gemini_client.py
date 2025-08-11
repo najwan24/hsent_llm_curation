@@ -39,8 +39,9 @@ class RateLimiter:
         self.tokens = requests_per_minute
         self.last_refill = time.time()
         self.request_times = deque()
+        self.last_request_time = 0  # Track last request for burst protection
         
-        logger.debug(f"Rate limiter initialized: {requests_per_minute} requests/minute")
+        logger.debug(f"Rate limiter initialized: {requests_per_minute} requests/minute with free tier protection")
     
     def can_make_request(self) -> bool:
         """
@@ -69,26 +70,41 @@ class RateLimiter:
         float
             Wait time in seconds.
         """
+        # Minimum wait time for free tier burst protection
+        min_wait_time = 4.5  # 4.5 seconds minimum between requests
+        
+        # Calculate time since last request
+        now = time.time()
+        time_since_last = now - self.last_request_time if self.last_request_time > 0 else min_wait_time
+        
+        # If not enough time has passed since last request, wait
+        if time_since_last < min_wait_time:
+            return min_wait_time - time_since_last
+        
+        # Check per-minute rate limit
         if self.can_make_request():
-            return 0.0
+            return 0.0  # Can make request immediately (minimum wait is handled above)
         
         # Wait until the oldest request is 1 minute old
         if self.request_times:
             oldest_request = self.request_times[0]
-            wait_time = 60 - (time.time() - oldest_request)
-            return max(0, wait_time)
+            calculated_wait = 60 - (time.time() - oldest_request)
+            return max(0, calculated_wait)
         
         return 0.0
     
     def record_request(self):
         """Record that a request was made."""
-        self.request_times.append(time.time())
+        current_time = time.time()
+        self.request_times.append(current_time)
+        self.last_request_time = current_time
     
     def wait_if_needed(self):
         """Wait if necessary to respect rate limits."""
         wait_time = self.wait_time()
+        # Always wait the calculated time (includes minimum wait for free tier)
         if wait_time > 0:
-            logger.info(f"Rate limit reached. Waiting {wait_time:.1f} seconds...")
+            logger.info(f"Rate limit protection. Waiting {wait_time:.1f} seconds...")
             time.sleep(wait_time)
 
 
@@ -99,17 +115,17 @@ class GeminiClient:
     
     # Model configurations with their rate limits (requests per minute)
     MODEL_CONFIGS = {
-        'gemini-2.0-flash-exp': {
-            'requests_per_minute': 15,
-            'display_name': 'Gemini 2.0 Flash Experimental'
+        'gemini-2.5-flash-lite': {
+            'requests_per_minute': 12,  # Reduced from 15 for free tier stability
+            'display_name': 'Gemini 2.5 Flash Lite'
         },
-        'gemini-1.5-flash': {
-            'requests_per_minute': 15,
-            'display_name': 'Gemini 1.5 Flash'
+        'gemini-2.5-flash': {
+            'requests_per_minute': 12,  # Reduced from 15 for free tier stability
+            'display_name': 'Gemini 2.5 Flash'
         },
-        'gemini-1.5-pro': {
-            'requests_per_minute': 2,
-            'display_name': 'Gemini 1.5 Pro'
+        'gemini-2.5-pro': {
+            'requests_per_minute': 5,
+            'display_name': 'Gemini 2.5 Pro'
         },
         'gemini-1.5-flash-8b': {
             'requests_per_minute': 15,
